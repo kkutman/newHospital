@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>hello</h1>
+
+<div class="container">
+    <form th:method="POST" th:action="createDoctor" th:object="${newDoctor}" class="form_hospital">
+        <div>
+            <label for="firstName" class="labels"> firstName </label>
+            <br/>
+            <input type="text" th:field="*{firstName}"id="firstName" class="inputs">
+            <label for="lastName" class="labels">  </label>
+            <br/>
+            <input type="text" th:field="*{lastName}"id="lastName" class="inputs">
+            <label for="email" class="labels"> email </label>
+            <br/>
+            <input type="text" th:field="*{email}"id="email" class="inputs">
+            <label for="name" class="labels"> position </label>
+            <br/>
+            <input type="text" th:field="*{position}"id="name" class="inputs">
+            <div class="form-group">
+                <select th:field="*{departmentId}">
+                    <option value="">--Select an option--</option>
+                    <option th:each="department : ${getAllDepartment}" th:value="${department.getId()}" th:text="${department.getName()}"></option>
+                </select>
+            </div>
+
+
+            <button type="submit" class="btn_save">SAVE</button>
+        </div>
+    </form>
+</div>
+</div>
+<p style="text-align:center;">
+    <a class="btn btn-outline'-primary" role="button" href="/hospital/s">Add new Hospital</a></p>
+</body>
+</html>

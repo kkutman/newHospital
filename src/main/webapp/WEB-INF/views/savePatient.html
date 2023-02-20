@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<th scope="col">id </th>-->
+<!--<th scope="col">firstName </th>-->
+<!--<th scope="col">LastName</th>-->
+<!--<th scope="col">Email</th>-->
+<!--<th scope="col">Gender</th>-->
+<!--<th scope="col">PhoneNumber</th>-->
+<!--<th scope="col">Hospital</th>-->
+<!--<th scope="col">delete</th>-->
+
+
+<div class="container">
+  <form th:method="POST" th:action="createPatient" th:object="${newPatient}" class="form_hospital">
+    <div>
+      <label for="name" class="labels"> first name </label>
+      <br/>
+      <input type="text" th:field="*{firstName}"id="name" class="inputs">
+
+      <label for="lastname" class="labels"> name </label>
+      <br/>
+      <input type="text" th:field="*{lastName}"id="lastname" class="inputs">
+
+      <label for="email" class="labels"> email </label>
+      <br/>
+      <input type="text" th:field="*{email}"id="email" class="inputs">
+
+      <label for="gender" class="labels"> gender </label>
+      <br/>
+      <input type="text" th:field="*{gender}"id="gender" class="inputs">
+
+      <label for="phoneNumber" class="labels"> phoneNumber </label>
+      <br/>
+      <input type="text" th:field="*{phoneNumber}"id="phoneNumber" class="inputs">
+      <button type="submit" class="btn_save">SAVE</button>
+    </div>
+  </form>
+</div>
+</div>
+</body>
+</html>
